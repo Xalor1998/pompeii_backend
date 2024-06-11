@@ -1,8 +1,5 @@
 package com.cex.vulcano.controller;
 
-import com.cex.vulcano.externalconnection.coingecko.CoinGeckoTool;
-import com.cex.vulcano.externalconnection.coingecko.model.CGCurrencyInfo;
-import com.cex.vulcano.externalconnection.dexscreener.DexScreenerTool;
 import com.cex.vulcano.externalconnection.mobula.MobulaTool;
 import com.cex.vulcano.externalconnection.mobula.model.MobulaTradePair;
 import com.cex.vulcano.externalconnection.mobula.model.MobulaTradePairs;
@@ -34,7 +31,7 @@ public class TradeController {
         List<TradePair> resultPairs = new ArrayList<>();
         for (Map.Entry<String, MobulaTradePair> currency : tradePairs.getData().entrySet()) {
             MobulaTradePair pair = currency.getValue();
-            TradePair resultPair = new TradePair(currency.getKey(), pair.getName(), pair.getPrice(), pair.getPrice_change_24h());
+            TradePair resultPair = new TradePair(currency.getKey(), pair.getSymbol(), pair.getPrice(), pair.getPrice_change_24h());
             resultPairs.add(resultPair);
         }
         return new TradePairs(resultPairs);
