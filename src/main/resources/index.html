@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Solana Exchange</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div>
+            <img src="result.png" alt="Pompeii Icon" style="width: 80px; height: 80px;">
+            <h1 style="font-size: 32px;">Pompeii</h1>
+        </div>
+        <nav class="navbar navbar-expand-lg">
+            <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-view="buy-crypto-content">Buy Crypto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#" data-view="main-content">Markets</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Trade
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown" data-display="static">
+                            <a class="dropdown-item" href="#" data-view="trade-content">Spot Trading</a>
+                            <a class="dropdown-item" href="#" data-view="trade-content">Margin Trading</a>
+                            <a class="dropdown-item" href="#" data-view="trade-content">Convert</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-view="main-content">Futures</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-view="main-content" style="color: #00FF00">Earn</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-view="wallets-content">Wallets</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="content-view" id="main-content">
+        <div class="main-content">
+            <div class="top-container" id="topTrendingContainer">
+                <h4>Top 3 Trending Pairs</h4>
+                <table class="token-table" id="topTrendingTable">
+                    <thead>
+                        <tr>
+                            <th>Token Pair</th>
+                            <th>Price</th>
+                            <th>24h Change</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Table Body for Top Trending Pairs -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="top-container" id="topGainersContainer">
+                <h4>Top 3 Gainer Pairs</h4>
+                <table class="token-table" id="topGainersTable">
+                    <thead>
+                        <tr>
+                            <th>Token Pair</th>
+                            <th>Price</th>
+                            <th>24h Change</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Table Body for Top Gainer Pairs -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="top-container" id="topLosersContainer">
+                <h4>Top 3 Loser Pairs</h4>
+                <table class="token-table" id="topLosersTable">
+                    <thead>
+                        <tr>
+                            <th>Token Pair</th>
+                            <th>Price</th>
+                            <th>24h Change</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Table Body for Top Loser Pairs -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search tokens...">
+        </div>
+
+        <!-- All Tokens Panel -->
+        <div class="all-tokens-panel">
+            <table class="token-table" id="allTokensTable">
+                <thead>
+                    <tr>
+                        <th>Token</th>
+                        <th>Price</th>
+                        <th>Change</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Token rows will be inserted dynamically -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="content-view" id="wallets-content" style="display: none;">
+        <div class="wallets-content">
+            <div class="panel">
+                <h4>Main Wallet</h4>
+                <p>Generated Solana Wallet:</p>
+                <p><strong>[Wallet Address]</strong></p>
+            </div>
+            <div class="panel">
+                <h4>Connect Wallet 1</h4>
+                <p>Connect your own Solana wallet:</p>
+                <button class="btn btn-primary">Connect Wallet</button>
+            </div>
+            <div class="panel">
+                <h4>Connect Wallet 2</h4>
+                <p>Connect another Solana wallet:</p>
+                <button class="btn btn-primary">Connect Wallet</button>
+            </div>
+            <div class="panel">
+                <h4>Connect Wallet 3</h4>
+                <p>Connect another Solana wallet:</p>
+                <button class="btn btn-primary">Connect Wallet</button>
+            </div>
+            <div class="panel">
+                <h4>Connect Wallet 4</h4>
+                <p>Connect another Solana wallet:</p>
+                <button class="btn btn-primary">Connect Wallet</button>
+            </div>
+            <div class="panel">
+                <h4>Connect Wallet 5</h4>
+                <p>Connect another Solana wallet:</p>
+                <button class="btn btn-primary">Connect Wallet</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-view" id="buy-crypto-content" style="display: none;">
+        <div class="buy-crypto-content">
+            <div class="top-container">
+                <div class="balance-panel">
+                    <h4>Your Solana Balance</h4>
+                    <p>10.25 SOL</p>
+                    <a href="#" class="details-link">Details</a>
+                </div>
+                <h4>Buy Crypto</h4>
+                <p>Connect with:</p>
+                <div class="connect-options">
+                    <button class="btn btn-primary">
+                        <img src="apple-pay.png" alt="Apple Pay" class="icon">
+                        Apple Pay
+                    </button>
+                    <button class="btn btn-primary">
+                        <img src="creditcard.png" alt="Credit Card" class="icon">
+                        Credit Card
+                    </button>
+                    <button class="btn btn-primary">
+                        <img src="paypal.png" alt="Paypal" class="paypal-icon">
+                        Paypal
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container text-center">
+            <p>&copy; All rights reserved.</p>
+            <p>Follow us on <a href="https://twitter.com/yourtwitter">Twitter</a> and <a href="https://t.me/yourtelegram">Telegram</a>.</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>

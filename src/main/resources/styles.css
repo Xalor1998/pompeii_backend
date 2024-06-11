@@ -1,0 +1,337 @@
+/* Global Styles */
+body {
+    background-color: #f8f9fa;
+    color: #212529;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Header Styles */
+header {
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+header h1 {
+    font-size: 24px;
+    margin: 0;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* Navigation Styles */
+nav {
+    margin-top: 20px;
+}
+
+.navbar-nav .nav-link {
+    color: #ffffff;
+    font-weight: bold;
+    margin-right: 20px;
+    transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #f8f9fa !important;
+}
+
+.navbar-nav .nav-link.active {
+    color: #f8f9fa !important;
+    background-color: #343a40;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+/* Main Content Section */
+.main-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.top-container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 30%;
+    transition: all 0.3s ease;
+}
+
+.top-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.top-container h4 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #343a40;
+}
+
+/* Token Table Styles */
+.token-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.token-table th, .token-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.token-table th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+    color: #495057;
+    cursor: pointer;
+}
+
+.token-table th:hover {
+    background-color: #e9ecef;
+}
+
+.token-table tr:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.positive-change {
+    color: #28a745;
+    font-weight: bold;
+}
+
+.negative-change {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+/* Footer Styles */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 7%;
+    background-color: #f8f9fa;
+    color: #212529;
+    padding: 3px;
+    text-align: center;
+    font-size: 12px;
+}
+
+footer a {
+    color: #007bff;
+}
+
+footer a:hover {
+    color: #0056b3;
+}
+/* Wallets Content */
+.wallets-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.panel {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    width: calc(30% - 20px); /* Subtract margin from width */
+    transition: all 0.3s ease;
+}
+
+.panel:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.panel h4 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #343a40;
+}
+
+/* Buy Crypto Content */
+.buy-crypto-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+.buy-crypto-content .connect-options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.buy-crypto-content .connect-options button {
+    margin-bottom: 10px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 12px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.buy-crypto-content .connect-options .icon {
+    margin-right: 30px;
+    max-width: 30px;
+    max-height: 30px;
+}
+
+/* Paypal Icon */
+.paypal-icon {
+    margin-right: 50px;
+    max-width: 24px;
+    max-height: 24px;
+    margin-left: -10px;
+}
+
+.balance-panel {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    width: parent; /* Subtract margin from width */
+    transition: all 0.3s ease;
+}
+
+.balance-panel h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #343a40;
+}
+
+.balance-panel p {
+    font-size: 16px;
+    color: #6c757d;
+    margin: 0;
+}
+
+.balance-panel {
+    position: relative;
+}
+
+.details-link {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    margin-right: 10px;
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.details-link:hover {
+    color: #0056b3;
+}
+
+/* Search Bar Styles */
+.search-bar {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.search-bar input {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+/* Token Table Styles */
+.token-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.token-table th,
+.token-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.token-table th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+    color: #495057;
+    cursor: pointer;
+}
+
+.token-table th:hover {
+    background-color: #e9ecef;
+}
+
+.token-table tr:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.positive-change {
+    color: #28a745;
+    font-weight: bold;
+}
+
+.negative-change {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+.all-tokens-panel {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    width: calc(100% - 100px);
+    transition: all 0.3s ease;
+    margin: 0 auto;
+    margin-bottom: 80px;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu {
+    background-color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.dropdown-menu a {
+    color: #212529;
+    padding: 8px 20px;
+    transition: all 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f8f9fa;
+    color: #007bff;
+}
