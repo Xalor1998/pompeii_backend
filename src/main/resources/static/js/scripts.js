@@ -1,5 +1,5 @@
 // Define the API URL
-const apiUrl = 'http://localhost:8081/api/trade/pairs?pairIds=' +
+const apiUrl = 'api/trade/pairs?pairIds=' +
 'JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN,' +
 'EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm,' +
 '7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr,' +
@@ -18,8 +18,6 @@ async function fetchData() {
             change: `${pair.usd_24h_change.toFixed(2)}%`
         }));
         console.log(tokens);
-
-        console.log("Hello world");
     } catch (error) {
         console.error('Error:', error);
     }
