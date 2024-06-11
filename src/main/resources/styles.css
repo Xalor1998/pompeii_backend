@@ -307,7 +307,7 @@ footer a:hover {
     padding: 20px;
     margin-bottom: 20px;
     margin-top: 20px;
-    width: calc(100% - 100px);
+    width: calc(80% - 100px);
     transition: all 0.3s ease;
     margin: 0 auto;
     margin-bottom: 80px;
@@ -335,3 +335,51 @@ footer a:hover {
     background-color: #f8f9fa;
     color: #007bff;
 }
+
+.search-and-menu {
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 12.5%;
+}
+
+.menu {
+    margin-right: 10px;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu ul li {
+    display: inline;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #333;
+}
+
+.menu ul li a.active {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.search-bar {
+    flex: 1;
+    text-align: right;
+}
+
+.search-bar input {
+    width: 18%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-left: 81%;
+}
+

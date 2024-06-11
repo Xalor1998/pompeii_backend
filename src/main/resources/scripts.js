@@ -1,17 +1,32 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const tokens = [
-        { pair: 'SOL/TOPG', price: '45.12', change: '5.23%' },
-        { pair: 'SOL/boden', price: '0.001', change: '-1.02%' },
-        { pair: 'SOL/tremp', price: '0.025', change: '3.45%' },
-        { pair: 'boden/tremp', price: '10.25', change: '-2.50%' },
-        { pair: 'GME/WIF', price: '100.00', change: '7.80%' },
-        { pair: 'WIF/Pepe', price: '200.50', change: '-3.20%' },
-        { pair: 'SOL/Pepe', price: '150.20', change: '2.75%' },
-        { pair: 'EGG/Pepe', price: '50.75', change: '-1.50%' },
-        { pair: 'MOTHER/boden', price: '80.10', change: '4.90%' },
-        { pair: 'DUKO/WIF', price: '70.30', change: '-0.80%' }
-    ];
+// Define the API URL
+const apiUrl = 'http://localhost:8081/api/trade/pairs?pairIds=' +
+'JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN,' +
+'EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm,' +
+'7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr,' +
+'8wXtPeU6557ETkp9WHFY1n1EcU6NxDvbAggHGsMYiHsB,' +
+'A3eME5CetyZPBoWbRUwY3tSe25S6tb18ba9ZPbWk9eFJ';
 
+let tokens = [];
+
+async function fetchData() {
+    try {
+        const response = await fetch(apiUrl, { method: 'GET' });
+        const data = await response.json();
+        tokens = data.pairs.map(pair => ({
+            name: pair.name,
+            price: `${'$'+pair.priceUsd.toFixed(4).toString()}`,
+            change: `${pair.usd_24h_change.toFixed(2)}%`
+        }));
+        console.log(tokens);
+
+        console.log("Hello world");
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    fetchData().then(() => {
     // Function to populate a table body with token data
     function populateTableBody(tableBody, data) {
         tableBody.innerHTML = ''; // Clear existing content
@@ -25,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 changeClass = 'negative-change';
             }
             row.innerHTML = `
-                <td>${token.pair}</td>
+                <td>${token.name}</td>
                 <td>${token.price}</td>
                 <td class="${changeClass}">${token.change}</td>
             `;
@@ -80,5 +95,6 @@ document.addEventListener('DOMContentLoaded', () => {
             // Display the selected content view
             document.getElementById(view).style.display = 'block';
         });
+    });
     });
 });

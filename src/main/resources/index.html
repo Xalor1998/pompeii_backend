@@ -48,7 +48,11 @@
     <div class="content-view" id="main-content">
         <div class="main-content">
             <div class="top-container" id="topTrendingContainer">
-                <h4>Top 3 Trending Pairs</h4>
+                <div class="trending-pairs">
+                    <img src="fire.png" alt="ikon" style="height: 40px; margin-bottom: 10px;">
+                    <h4 style="display: inline;">Top 3 Trending Pairs</h4>
+                </div>
+                <hr style="border-top: 1px solid #ccc; margin: 5px 0;">
                 <table class="token-table" id="topTrendingTable">
                     <thead>
                         <tr>
@@ -64,7 +68,11 @@
             </div>
 
             <div class="top-container" id="topGainersContainer">
-                <h4>Top 3 Gainer Pairs</h4>
+                <div class="trending-pairs">
+                    <img src="uptrend.png" alt="ikon" style="height: 40px; margin-bottom: 10px; margin-right: 5px;">
+                    <h4 style="display: inline;">Top 3 Gainer Pairs</h4>
+                </div>
+                <hr style="border-top: 1px solid #ccc; margin: 5px 0;">
                 <table class="token-table" id="topGainersTable">
                     <thead>
                         <tr>
@@ -80,7 +88,11 @@
             </div>
 
             <div class="top-container" id="topLosersContainer">
-                <h4>Top 3 Loser Pairs</h4>
+                <div class="trending-pairs">
+                    <img src="downtrend.png" alt="ikon" style="height: 40px; margin-bottom: 10px; margin-right: 5px;">
+                    <h4 style="display: inline;">Top 3 Loser Pairs</h4>
+                </div>
+                <hr style="border-top: 1px solid #ccc; margin: 5px 0;">
                 <table class="token-table" id="topLosersTable">
                     <thead>
                         <tr>
@@ -95,9 +107,19 @@
                 </table>
             </div>
         </div>
-        <!-- Search Bar -->
-        <div class="search-bar">
-            <input type="text" id="search-input" placeholder="Search tokens...">
+        <div class="search-and-menu">
+            <!-- Menu -->
+            <div class="menu">
+                <ul>
+                    <li><a href="#" class="active">All</a></li>
+                    <li><a href="#">Favorites</a></li>
+                    <li><a href="#">New</a></li>
+                </ul>
+            </div>
+            <!-- Search Bar -->
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Search tokens...">
+            </div>
         </div>
 
         <!-- All Tokens Panel -->
