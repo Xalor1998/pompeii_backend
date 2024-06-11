@@ -22,9 +22,7 @@ public class WalletController {
 
     @PostMapping("/create")
     public ResponseEntity<Wallet> createWallet(@RequestBody WalletRequest request) {
-        System.out.println("bent");
         User user = userService.findByUsername(request.getUsername());
-        System.out.println("User: " + user == null);
         if (user == null) {
             return ResponseEntity.notFound().build();
         }
