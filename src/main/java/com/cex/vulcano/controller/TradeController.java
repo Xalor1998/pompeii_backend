@@ -16,6 +16,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/trade")
+@CrossOrigin(origins = "http://localhost:52330")
 public class TradeController {
 
     @Autowired
