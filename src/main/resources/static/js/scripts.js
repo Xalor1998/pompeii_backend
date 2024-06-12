@@ -104,3 +104,91 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     });
 });
+
+const getProvider = () => {
+    const provider = window.phantom?.solana;
+    if (provider) {
+        if (provider.isPhantom) {
+            return provider;
+        } else {
+            return 'Please log in to your Phantom Wallet.';
+        }
+    } else {
+        return 'Phantom Wallet is not installed.';
+    }
+};
+
+let walletAddresses = [];
+
+document.querySelectorAll('.content-view#wallets-content .btn-primary').forEach(button => {
+    button.addEventListener('click', async () => {
+        const panel = button.closest('.panel');
+        const walletAddressElement = panel.querySelector('p');
+
+        console.log(walletAddresses);
+
+        const providerMessage = getProvider();
+        if (typeof providerMessage === 'string') {
+            walletAddressElement.textContent = providerMessage;
+        } else {
+            try {
+                const provider = await providerMessage.connect();
+                const publicKey = provider.publicKey.toString();
+
+                if (walletAddresses.includes(publicKey)) {
+                    walletAddressElement.textContent = 'Wallet address already used';
+                    return;
+                }
+
+                walletAddresses.push(publicKey); // Add the new wallet address to the set
+
+                walletAddressElement.textContent = publicKey;
+
+                const walletHeader = panel.querySelector('h4');
+                walletHeader.textContent = `Connected Wallet`;
+
+                // Transform the button into a textfield-like element
+                button.textContent = 'Loading balance...';
+                button.disabled = true;
+                button.classList.add('balance-button');
+
+                const balance = await getBalance(publicKey);
+
+                // Update the transformed button with the balance
+                button.textContent = `SOL Balance: ${balance}`;
+            } catch (err) {
+                walletAddressElement.textContent = `Error: ${err.message}`;
+            }
+        }
+    });
+});
+
+
+async function getBalance(publicKey) {
+    try {
+        const response = await fetch('https://api.devnet.solana.com', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                jsonrpc: '2.0',
+                id: 1,
+                method: 'getBalance',
+                params: [publicKey]
+            })
+        });
+
+        const data = await response.json();
+
+        if (data && data.result && data.result.value !== undefined) {
+            return data.result.value;
+        } else {
+            console.error('Unexpected response format:', data);
+            throw new Error('Unexpected response format.');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        throw new Error(error.message);
+    }
+}
