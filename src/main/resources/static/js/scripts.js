@@ -150,6 +150,10 @@ document.querySelectorAll('.content-view#wallets-content .btn-primary').forEach(
                 // Transform the button into a textfield-like element
                 button.textContent = 'Loading balance...';
                 button.disabled = true;
+                button.style.backgroundColor = '#2ecc71';
+                button.style.border = '1px solid #000000';
+                button.style.color = '#000000';
+                button.style.opacity = 1;
                 button.classList.add('balance-button');
 
                 const balance = await getBalance(publicKey);
