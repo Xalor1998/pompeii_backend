@@ -4,7 +4,15 @@ const apiUrl = 'api/trade/pairs?pairIds=' +
 'EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm,' +
 '7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr,' +
 '8wXtPeU6557ETkp9WHFY1n1EcU6NxDvbAggHGsMYiHsB,' +
-'A3eME5CetyZPBoWbRUwY3tSe25S6tb18ba9ZPbWk9eFJ';
+'A3eME5CetyZPBoWbRUwY3tSe25S6tb18ba9ZPbWk9eFJ,' +
+'DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263,' +
+'85VBFQZC9TZkfaptBWjvUw7YbZjy52A6mjtPGjstQAmQ,' +
+'WENWENvqqNya429ubCdR81ZmD69brwQaaBYY6p3LCpk,' +
+'METAewgxyPbgwsseH8T16a39CQ5VyVxZi9zXiDPY18m,' +
+'HLptm5e6rTgh4EKgDpYFrnRHbjpkMyVdEeREEa2G7rf9,' +
+'MangoCzJ36AjZyKwVj3VnYU4GTonjfVEnJmvvWaxLac,' +
+'CxrhHSqyW8YTDWc4csJMMgo7uBUJSXzNzrWhtw9ULdru,' +
+'7xKXtg2CW87d97TXJSDpbD5jBkheTqA83TZRuJosgAsU';
 
 let tokens = [];
 
